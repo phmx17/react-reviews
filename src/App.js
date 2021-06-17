@@ -1,6 +1,8 @@
 import React from 'react';
 import Review from './Review';
 import { AiFillGithub } from 'react-icons/ai'
+import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa'
+
 function App() {
   return <main>
     <section className="container">
