@@ -3,16 +3,26 @@ import people from './data';
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa';
 
 const Review = () => {
+  // helper functions
+  const checkIndex = (index) => {
+    if (index > people.length - 1) {
+      return 0  // cycle to beginning of array
+    }
+    if (index < 0) {
+      return people.length - 1  // cycle to end of array
+    }
+    return index // must have default return
+  }
   const prevPerson = () => {    
     setIndex((index) => {
       let newIndex = index - 1
-      return newIndex
+      return checkIndex(newIndex)
     })
   }
   const nextPerson = () => {
     setIndex((index) => {
       let newIndex = index + 1
-      return newIndex
+      return checkIndex(newIndex)
     })
   }
   const randomPerson = () => {
