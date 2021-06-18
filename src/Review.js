@@ -27,8 +27,11 @@ const Review = () => {
   }
   const randomPerson = () => {
     setIndex((index) => {
-      let newIndex = Math.floor(Math.random() * 4) // 0,1,2,3
-      return newIndex
+      let randomIndex = Math.floor(Math.random() * people.length) // 0,1,2,3
+      if (randomIndex == index) { 
+        return checkIndex(randomIndex + 1)  // prevent doubled randoms
+      }
+      return randomIndex
     }) 
   }
 
